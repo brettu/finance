@@ -1,0 +1,19 @@
+<%= render :partial => "header" %>
+
+<div id="content">
+  
+  <h2>Da Blog</h2>
+
+<% @posts.each do |post| %>
+ 
+    <h3><%=h post.title %></h3>
+    <p><%=h post.content %></p>
+    <p>Authored by:<%=h post.name %></p>
+
+<% end %>
+
+</div>
+
+<br />
+
+<%= link_to 'New post', new_post_path %>

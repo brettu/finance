@@ -1,0 +1,31 @@
+
+<p>
+  <b>Name:</b>
+  <%=h @event.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%=h @event.capacity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @event.price %>
+</p>
+
+<p>
+  <b>Starts at:</b>
+  <%=h @event.starts_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+<%= link_to 'Manage Comments', event_comments_path(@event) %>
+
+

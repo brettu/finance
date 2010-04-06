@@ -1,0 +1,34 @@
+<%= render :partial => "header" %>
+
+<div id="content">
+
+<h2>Current Events</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Capacity</th>
+    <th>Price</th>
+    <th>Starts at</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%=h event.name %></td>
+    <td><%=h event.description %></td>
+    <td><%=h event.capacity %></td>
+    <td><%=h event.price %></td>
+    <td><%=h event.starts_at %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+</div>
+
+<%= link_to 'New event', new_event_path %>

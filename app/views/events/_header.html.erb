@@ -1,0 +1,19 @@
+<div id="header">
+<h1>Brett U.com 
+Programming {} 
+Finance µ 
+Mathematics ∫</h1>
+<h4>Another web blog by rails!</h4>
+
+<hr>
+
+<% form_tag search_events_path, :method => :get do -%>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag 'Search' %>
+<% end -%>
+
+<ul>
+  <li><%= link_to "Da Blog", posts_path %></li>
+  <li><%= link_to "Twitter" %></li>
+</ul>
+</div>

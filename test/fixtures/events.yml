@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  capacity: 1
+  price: 9.99
+  starts_at: 2010-03-30 23:16:27
+
+two:
+  name: MyString
+  description: MyText
+  capacity: 1
+  price: 9.99
+  starts_at: 2010-03-30 23:16:27

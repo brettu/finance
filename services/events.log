@@ -1,0 +1,21 @@
+# Logfile created on Tue Mar 30 23:49:52 -0500 2010 by logger.rb/22285
+GET http://localhost:3000/events.xml
+--> 200 OK (493 19ms)
+GET http://localhost:3000/events/1.xml
+--> 200 OK (441 17ms)
+PUT http://localhost:3000/events/1.xml
+--> 200 OK (1 129ms)
+POST http://localhost:3000/events.xml
+--> 201 Created (429 24ms)
+DELETE http://localhost:3000/events/2.xml
+--> 200 OK (1 18ms)
+GET http://localhost:3000/events.xml
+--> 200 OK (494 53ms)
+GET http://localhost:3000/events/1.xml
+--> 200 OK (442 17ms)
+PUT http://localhost:3000/events/1.xml
+--> 200 OK (1 21ms)
+POST http://localhost:3000/events.xml
+--> 201 Created (429 23ms)
+DELETE http://localhost:3000/events/3.xml
+--> 200 OK (1 17ms)

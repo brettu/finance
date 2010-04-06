@@ -1,0 +1,3151 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100325030347')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-25 00:28:15) [GET]
+Rendering home/index
+Completed in 101ms (View: 99, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 00:28:17) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-25 00:28:19) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-25 00:28:27) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"name"=>"Great Now I have a blog again", "title"=>"", "content"=>""}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs="}
+  [4;35;1mPost Create (26.1ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('Great Now I have a blog again', '2010-03-25 05:28:27', '', '2010-03-25 05:28:27', '')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 34ms (DB: 26) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 00:28:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 00:28:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 00:55:30) [GET]
+
+ArgumentError (Range unspecified.  Specify the :within, :maximum, :minimum, or :is option.):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:5:in `index'
+
+Rendered rescues/_trace (25.7ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-25 00:58:16) [GET]
+Rendering home/index
+Completed in 76ms (View: 74, DB: 0) | 200 OK [http://localhost/home/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 00:58:19) [GET]
+
+ArgumentError (Range unspecified.  Specify the :within, :maximum, :minimum, or :is option.):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:5:in `index'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 00:59:45) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-25 00:59:48) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-25 01:00:06) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"name"=>"bmoney", "title"=>"Second poster", "content"=>"buch of filler text"}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs="}
+  [4;35;1mPost Create (0.3ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('bmoney', '2010-03-25 06:00:06', 'Second poster', '2010-03-25 06:00:06', 'buch of filler text')[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:00:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 01:00:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 01:00:21) [PUT]
+  Parameters: {"commit"=>"Update", "post"=>{"name"=>"bmoney", "title"=>"akd", "content"=>"buch of filler text"}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs=", "id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 01:00:38) [PUT]
+  Parameters: {"commit"=>"Update", "post"=>{"name"=>"bmoney", "title"=>"This is a second post", "content"=>"buch of filler text"}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs=", "id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2010-03-25 06:00:38', "title" = 'This is a second post' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts/2
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:00:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:02:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:02:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:03:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:12:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 01:12:39) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-25 01:12:51) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (2.9ms)
+Completed in 46ms (View: 42, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-25 01:13:25) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"name"=>"bmoney", "title"=>"Better than the Repeat", "content"=>"you don't want to repeat your code to anyone"}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs="}
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('bmoney', '2010-03-25 06:13:25', 'Better than the Repeat', '2010-03-25 06:13:25', 'you don''t want to repeat your code to anyone')[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:13:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:19:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 01:19:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Rendered posts/_form (2.8ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/3/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 01:19:43) [PUT]
+  Parameters: {"commit"=>"Save", "post"=>{"name"=>"bmoney", "title"=>"Better than the Repeating More", "content"=>"you don't want to repeat your code to anyone"}, "authenticity_token"=>"+mK5p993oDrSUk4qMlpkA9nIBfYT8g5WUT2aXExCUWs=", "id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2010-03-25 06:19:43', "title" = 'Better than the Repeating More' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/posts/3
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/posts/3]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:19:43) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar(255), "body" text, "post_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100325062109')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:41:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 29ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 01:41:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Rendered posts/_form (2.8ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/3/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 01:41:34) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 01:41:38) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:42:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:45:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+Migrating to CreateTags (20100325064740)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "post_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100325064740')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tags")[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 01:59:37) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/bweikulrich/Desktop/finance/app/models/post.rb:7: syntax error, unexpected tIDENTIFIER, expecting '}'
+... |attrs| attrs.all? {|k, v|} v.blank }
+                              ^):
+  app/controllers/posts_controller.rb:91:in `find_post'
+
+Rendered rescues/_trace (24.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:00:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-25 02:00:35) [GET]
+Rendering home/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 02:00:37) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:00:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 02:00:43) [GET]
+  Parameters: {"post_id"=>"1"}
+
+SyntaxError (/Users/bweikulrich/Desktop/finance/app/controllers/comments_controller.rb:61: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (19.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:01:41) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 25ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:01:44) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:02:42) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (26.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:02:46) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 48ms (View: 41, DB: 0) | 200 OK [http://localhost/posts/1/comments/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:02:50) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:02:51) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (25.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:07:46) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (25.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:07:50) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1/comments/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:07:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 02:07:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 1) [0m
+Rendered posts/_form (9.1ms)
+Completed in 54ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 02:08:19) [PUT]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"alphy"}}, "name"=>"Great Now I have a blog again", "title"=>"this is a first post", "content"=>"bunch of dunny text"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM=", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+NoMethodError (undefined method `blank' for "alphy":String):
+  app/models/post.rb:7
+  app/models/post.rb:7:in `each'
+  app/models/post.rb:7:in `all?'
+  app/models/post.rb:7
+  app/controllers/posts_controller.rb:65
+  app/controllers/posts_controller.rb:64:in `update'
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 02:09:35) [PUT]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"alphy"}}, "name"=>"Great Now I have a blog again", "title"=>"this is a first post", "content"=>"bunch of dunny text"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM=", "id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2010-03-25 07:09:35', "title" = 'this is a first post', "content" = 'bunch of dunny text' WHERE "id" = 1[0m
+  [4;36;1mTag Create (0.1ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('alphy', '2010-03-25 07:09:35', '2010-03-25 07:09:35', 1)[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:09:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 02:09:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 1) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags".post_id = 1) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bweikulrich/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered posts/_form (7.7ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 02:09:41) [PUT]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"alphy", "_delete"=>"0", "id"=>"1"}}, "name"=>"Great Now I have a blog again", "title"=>"this is a first post", "content"=>"bunch of dunny text"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM=", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags".post_id = 1) [0m
+Redirected to http://localhost:3000/posts/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:09:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 02:09:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 1) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags".post_id = 1) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bweikulrich/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered posts/_form (7.5ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 02:09:48) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-25 02:09:54) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (5.3ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-25 02:10:21) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"this day"}}, "name"=>"bmoney", "title"=>"trippin on four", "content"=>"more worthless text"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM="}
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('bmoney', '2010-03-25 07:10:21', 'trippin on four', '2010-03-25 07:10:21', 'more worthless text')[0m
+  [4;35;1mTag Create (0.1ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('this day', '2010-03-25 07:10:21', '2010-03-25 07:10:21', 4)[0m
+Redirected to http://localhost:3000/posts/4
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:10:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 02:10:27) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2010-03-25 02:10:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tags" WHERE ("tags".post_id = 1) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags".post_id = 1) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bweikulrich/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered posts/_form (7.9ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1/edit]
+
+
+Processing PostsController#update (for 127.0.0.1 at 2010-03-25 02:10:52) [PUT]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"alphy", "_delete"=>"0", "id"=>"1"}}, "name"=>"bmoney", "title"=>"this is a first post", "content"=>"bunch of dunny text"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM=", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE ("tags".post_id = 1) [0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2010-03-25 07:10:52', "name" = 'bmoney' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:10:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:10:56) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:10:57) [GET]
+  Parameters: {"post_id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (63.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 02:11:33) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:11:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:11:42) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:11:47) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (25.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:13:20) [GET]
+  Parameters: {"post_id"=>"3"}
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:17:in `new'
+
+Rendered rescues/_trace (20.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:13:24) [GET]
+  Parameters: {"post_id"=>"3"}
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:17:in `new'
+
+Rendered rescues/_trace (60.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:14:31) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/comments/new.html.erb:
+1: <h1>New comment</h1>
+2: 
+3: <% form_for([@post, @comment]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/comments/new.html.erb:3
+
+Rendered rescues/_trace (25.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:15:12) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/new
+Completed in 47ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-03-25 02:15:38) [POST]
+  Parameters: {"comment"=>{"body"=>"this article blows a bunch of gobbers", "commenter"=>"moneyBBBBB"}, "commit"=>"Create", "post_id"=>"3", "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM="}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "body", "updated_at", "post_id", "commenter") VALUES('2010-03-25 07:15:38', 'this article blows a bunch of gobbers', '2010-03-25 07:15:38', 3, 'moneyBBBBB')[0m
+Redirected to http://localhost:3000/posts/3/comments/1
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-03-25 02:15:38) [GET]
+  Parameters: {"post_id"=>"3", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 3)) [0m
+Rendering comments/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/3/comments/1]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-03-25 02:16:49) [GET]
+  Parameters: {"post_id"=>"3", "id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 1 AND ("comments".post_id = 3)) [0m
+Rendering comments/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/3/comments/1]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:16:59) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (61.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:18:32) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:24:22) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:24:39) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (62.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:29) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (23.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:31) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (62.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:36) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (24.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:51) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (24.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:53) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (64.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:53) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (25.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:53) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (64.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:54) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:25:54) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.commenter %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (24.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:26:44) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:27:04) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:27:07) [GET]
+  Parameters: {"post_id"=>"3"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/3/comments]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-25 02:27:10) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-25 02:27:11) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (5.6ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-03-25 02:27:15) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"w;okefgj;k"}}, "name"=>"alidsjfgh`", "title"=>";adjfhg", "content"=>"ad;ofgjh;o`"}, "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM="}
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('alidsjfgh`', '2010-03-25 07:27:15', ';adjfhg', '2010-03-25 07:27:15', 'ad;ofgjh;o`')[0m
+  [4;36;1mTag Create (0.1ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('w;okefgj;k', '2010-03-25 07:27:15', '2010-03-25 07:27:15', 5)[0m
+Redirected to http://localhost:3000/posts/5
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:27:15) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/5]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:27:19) [GET]
+  Parameters: {"post_id"=>"5"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering comments/index
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 5) [0m
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/5/comments]
+
+
+Processing CommentsController#new (for 127.0.0.1 at 2010-03-25 02:27:21) [GET]
+  Parameters: {"post_id"=>"5"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering comments/new
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/5/comments/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-03-25 02:27:25) [POST]
+  Parameters: {"comment"=>{"body"=>"s;ldfkg;lkj", "commenter"=>"l;sdkfjg"}, "commit"=>"Create", "post_id"=>"5", "authenticity_token"=>"IHQaAwlvwVx3VY7i4XGg10Vy04XLuS2iaSzVUfPMQQM="}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "body", "updated_at", "post_id", "commenter") VALUES('2010-03-25 07:27:26', 's;ldfkg;lkj', '2010-03-25 07:27:26', 5, 'l;sdkfjg')[0m
+Redirected to http://localhost:3000/posts/5/comments/2
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/posts/5/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2010-03-25 02:27:26) [GET]
+  Parameters: {"post_id"=>"5", "id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 2 AND ("comments".post_id = 5)) [0m
+Rendering comments/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/5/comments/2]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-03-25 02:27:30) [GET]
+  Parameters: {"post_id"=>"5"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering comments/index
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 5) [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/5/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-03-25 02:27:36) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 5) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posts/5]
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+Migrating to CreateTags (20100325064740)
+Migrating to CreateEvents (20100331041627)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "capacity" integer, "price" decimal, "starts_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100331041627')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-30 23:17:22) [GET]
+Rendering home/index
+Completed in 30ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-03-30 23:17:26) [GET]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 75ms (View: 40, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-03-30 23:17:30) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (42.1ms)
+Completed in 53ms (View: 49, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-30 23:18:39) [GET]
+Rendering home/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-30 23:18:44) [GET]
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2010-03-30 23:18:49) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 108ms (View: 105, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2010-03-30 23:36:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "event"=>{"price"=>"$10.00", "name"=>"Dollar Index Change", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"3", "starts_at(3i)"=>"31", "starts_at(4i)"=>"04", "starts_at(5i)"=>"18", "capacity"=>"low", "description"=>"Dollar index goes higher. "}}
+  [4;36;1mEvent Create (0.3ms)[0m   [0;1mINSERT INTO "events" ("name", "price", "created_at", "starts_at", "updated_at", "description", "capacity") VALUES('Dollar Index Change', 0.0, '2010-03-31 04:36:53', '2010-03-31 04:18:00', '2010-03-31 04:36:53', 'Dollar index goes higher. ', 0)[0m
+Redirected to http://localhost:3000/events/1
+Completed in 69ms (DB: 0) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-30 23:36:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-03-30 23:36:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/events/1/edit]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-30 23:37:05) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-03-30 23:44:21) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/events.xml]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-03-30 23:49:52) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" [0m
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/events.xml]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2010-03-30 23:49:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1.xml]
+
+
+Processing EventsController#update to xml (for 127.0.0.1 at 2010-03-30 23:49:52) [PUT]
+  Parameters: {"id"=>"1", "event"=>{"price"=>20.0, "name"=>"Dollar Index Change", "created_at"=>Wed Mar 31 04:36:53 UTC 2010, "updated_at"=>Wed Mar 31 04:36:53 UTC 2010, "starts_at"=>Wed Mar 31 04:18:00 UTC 2010, "id"=>1, "capacity"=>0, "description"=>"Dollar index goes higher. "}}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mEvent Update (0.2ms)[0m   [0;1mUPDATE "events" SET "updated_at" = '2010-03-31 04:49:52', "price" = 20.0 WHERE "id" = 1[0m
+Completed in 8ms (View: 0, DB: 0) | 200 OK [http://localhost/events/1.xml]
+
+
+Processing EventsController#create to xml (for 127.0.0.1 at 2010-03-30 23:49:52) [POST]
+  Parameters: {"event"=>{"price"=>10.0, "name"=>"Shortest event evar!", "starts_at"=>Wed Mar 31 04:49:51 UTC 2010, "capacity"=>25}}
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO "events" ("name", "price", "created_at", "starts_at", "updated_at", "description", "capacity") VALUES('Shortest event evar!', 10.0, '2010-03-31 04:49:52', '2010-03-31 04:49:51', '2010-03-31 04:49:52', NULL, 25)[0m
+Completed in 10ms (View: 2, DB: 0) | 201 Created [http://localhost/events.xml]
+
+
+Processing EventsController#destroy to xml (for 127.0.0.1 at 2010-03-30 23:49:52) [DELETE]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+  [4;35;1mEvent Destroy (0.2ms)[0m   [0mDELETE FROM "events" WHERE "id" = 2[0m
+Completed in 6ms (View: 0, DB: 0) | 200 OK [http://localhost/events/2.xml]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-03-30 23:50:09) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" [0m
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/events.xml]
+
+
+Processing EventsController#show to xml (for 127.0.0.1 at 2010-03-30 23:50:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1.xml]
+
+
+Processing EventsController#update to xml (for 127.0.0.1 at 2010-03-30 23:50:09) [PUT]
+  Parameters: {"id"=>"1", "event"=>{"price"=>20.0, "name"=>"Dollar Index Change", "created_at"=>Wed Mar 31 04:36:53 UTC 2010, "updated_at"=>Wed Mar 31 04:49:52 UTC 2010, "starts_at"=>Wed Mar 31 04:18:00 UTC 2010, "id"=>1, "capacity"=>0, "description"=>"Dollar index goes higher. "}}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+Completed in 6ms (View: 0, DB: 0) | 200 OK [http://localhost/events/1.xml]
+
+
+Processing EventsController#create to xml (for 127.0.0.1 at 2010-03-30 23:50:09) [POST]
+  Parameters: {"event"=>{"price"=>10.0, "name"=>"Shortest event evar!", "starts_at"=>Wed Mar 31 04:50:08 UTC 2010, "capacity"=>25}}
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO "events" ("name", "price", "created_at", "starts_at", "updated_at", "description", "capacity") VALUES('Shortest event evar!', 10.0, '2010-03-31 04:50:09', '2010-03-31 04:50:08', '2010-03-31 04:50:09', NULL, 25)[0m
+Completed in 9ms (View: 2, DB: 0) | 201 Created [http://localhost/events.xml]
+
+
+Processing EventsController#destroy to xml (for 127.0.0.1 at 2010-03-30 23:50:09) [DELETE]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+  [4;35;1mEvent Destroy (0.2ms)[0m   [0mDELETE FROM "events" WHERE "id" = 3[0m
+Completed in 6ms (View: 0, DB: 0) | 200 OK [http://localhost/events/3.xml]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:09:09) [GET]
+  Parameters: {"order"=>"starts_at"}
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY starts_at desc[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/events?order=starts_at]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2010-03-31 00:10:44) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2010-03-31 00:11:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "event"=>{"price"=>"$10.00", "name"=>"Gold Pricing", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"3", "starts_at(3i)"=>"31", "starts_at(4i)"=>"05", "starts_at(5i)"=>"10", "capacity"=>"Min", "description"=>"Why gold will not make new highs or lows this year"}}
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO "events" ("name", "price", "created_at", "starts_at", "updated_at", "description", "capacity") VALUES('Gold Pricing', 0.0, '2010-03-31 05:11:20', '2010-03-31 05:10:00', '2010-03-31 05:11:20', 'Why gold will not make new highs or lows this year', 0)[0m
+Redirected to http://localhost:3000/events/4
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 00:11:20) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/4]
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:15:42) [GET]
+  Parameters: {"q"=>"rubyconf"}
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1048931b8>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:17:12) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/events/]
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:17:17) [GET]
+  Parameters: {"commit"=>"Search Events", "q"=>"rings"}
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104b8d418>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:19:02) [GET]
+  Parameters: {"commit"=>"Search Events", "q"=>"rings"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1048952b0>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:19:14) [GET]
+  Parameters: {"q"=>"rubyconf"}
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104cc0b00>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:19:20) [GET]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1049e6a60>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (20.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:19:29) [GET]
+  Parameters: {"q"=>"Gold"}
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104777720>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (63.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:19:36) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/events/]
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:19:44) [GET]
+  Parameters: {"commit"=>"Search Events", "q"=>"Gold Pricing"}
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1049ca810>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (20.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:21:11) [GET]
+  Parameters: {"q"=>""}
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104467698>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (22.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:21:17) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 85ms (View: 82, DB: 1) | 200 OK [http://localhost/events/]
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:21:26) [GET]
+  Parameters: {"commit"=>"Search Events", "q"=>"this is where you go"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104458fa8>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:24:50) [GET]
+  Parameters: {"order"=>"starts_at"}
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY starts_at desc[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/events?order=starts_at]
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:25:08) [GET]
+  Parameters: {"commit"=>"Search Events", "q"=>"2"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1041a72c8>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (22.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:26:04) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x104493180>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#search (for 127.0.0.1 at 2010-03-31 00:26:07) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `search' for #<Class:0x1042d41c8>):
+  app/controllers/events_controller.rb:76:in `search'
+
+Rendered rescues/_trace (21.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-31 00:26:19) [GET]
+
+ActionController::RoutingError (No route matches "/events/search.html.erb" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:37:20) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `search_events_path' for #<ActionView::Base:0x104360150>) on line #3 of app/views/events/index.html.erb:
+1: <h1>Listing events</h1>
+2: 
+3: <% form_tag search_events_path, :method => :get do -%>
+4:   <%= text_field_tag :q, params[:q] %>
+5:   <%= submit_tag 'Search Events' %>
+6: <% end -%>
+
+    app/views/events/index.html.erb:3
+    app/controllers/events_controller.rb:8:in `index'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:40:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `search_events_path' for #<ActionView::Base:0x1040292c0>) on line #3 of app/views/events/index.html.erb:
+1: <h1>Listing events</h1>
+2: 
+3: <% form_tag search_events_path, :method => :get do -%>
+4:   <%= text_field_tag :q, params[:q] %>
+5:   <%= submit_tag 'Search Events' %>
+6: <% end -%>
+
+    app/views/events/index.html.erb:3
+    app/controllers/events_controller.rb:8:in `index'
+
+Rendered rescues/_trace (28.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-31 00:54:45) [GET]
+Rendering home/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:54:49) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `search_events_path' for #<ActionView::Base:0x103f9e418>) on line #3 of app/views/events/index.html.erb:
+1: <h1>Listing events</h1>
+2: 
+3: <% form_tag search_events_path, :method => :get do -%>
+4:   <%= text_field_tag :q, params[:q] %>
+5:   <%= submit_tag 'Search Events' %>
+6: <% end -%>
+
+    app/views/events/index.html.erb:3
+    app/controllers/events_controller.rb:8:in `index'
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-31 00:59:17) [GET]
+
+ActionController::RoutingError (No route matches "/events/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 00:59:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (copy_event_url failed to generate from {:action=>"copy", :controller=>"events", :id=>nil}, expected: {:action=>"copy", :controller=>"events"}, diff: {:id=>nil}) on line #8 of app/views/events/index.html.erb:
+5:   <%= submit_tag 'Search Events' %>
+6: <% end -%>
+7: 
+8: <%= button_to "Copy" , copy_event_path(@event) %>
+9: 
+10: <table>
+11:   <tr>
+
+    (eval):16:in `copy_event_path'
+    app/views/events/index.html.erb:8
+    app/controllers/events_controller.rb:8:in `index'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 01:00:22) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 01:00:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_registrations_path' for #<ActionView::Base:0x10412f570>) on line #32 of app/views/events/show.html.erb:
+29: 
+30: <p>
+31: <%= link_to 'Registrations',
+32:             event_registrations_path(@event) %>
+33: </p>
+34: 
+35: <%= button_to "Copy" , copy_event_path(@event) %>
+
+    app/views/events/show.html.erb:32
+    app/controllers/events_controller.rb:19:in `show'
+
+Rendered rescues/_trace (67.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 01:00:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 01:00:55) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x104268608>):
+  app/controllers/events_controller.rb:86:in `copy'
+
+Rendered rescues/_trace (21.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#1 (for 127.0.0.1 at 2010-03-31 01:21:31) [GET]
+  Parameters: {"id"=>"copy"}
+
+ActionController::UnknownAction (No action responded to 1. Actions: copy, create, destroy, edit, index, new, search, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 01:21:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1/]
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 01:21:40) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x10437ddb8>):
+  app/controllers/events_controller.rb:117:in `copy'
+
+Rendered rescues/_trace (21.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 01:22:38) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x104144358>):
+  app/controllers/events_controller.rb:117:in `copy'
+
+Rendered rescues/_trace (61.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 01:22:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1/]
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 01:22:43) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x1043b90e8>):
+  app/controllers/events_controller.rb:117:in `copy'
+
+Rendered rescues/_trace (20.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+Migrating to CreateTags (20100325064740)
+Migrating to CreateEvents (20100331041627)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 01:24:37) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2010-03-31 01:24:39) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 01:24:41) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 01:24:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 01:24:46) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x10433a8b0>):
+  app/controllers/events_controller.rb:117:in `copy'
+
+Rendered rescues/_trace (20.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 09:02:20) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/events/]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-03-31 09:02:55) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 66ms (View: 63, DB: 0) | 200 OK [http://localhost/events/4/edit]
+
+
+Processing EventsController#update (for 127.0.0.1 at 2010-03-31 09:03:07) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"4", "event"=>{"price"=>"0", "name"=>"Gold Pricing", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"4", "starts_at(3i)"=>"10", "starts_at(4i)"=>"05", "starts_at(5i)"=>"10", "capacity"=>"0", "description"=>"Why gold will not make new highs or lows this year"}}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+  [4;36;1mEvent Update (6.8ms)[0m   [0;1mUPDATE "events" SET "updated_at" = '2010-03-31 14:03:07', "starts_at" = '2010-04-10 05:10:00' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/events/4
+Completed in 15ms (DB: 7) | 302 Found [http://localhost/events/4]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 09:03:07) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/4]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 09:03:09) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-03-31 09:03:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/events/1/edit]
+
+
+Processing EventsController#update (for 127.0.0.1 at 2010-03-31 09:03:22) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1", "event"=>{"price"=>"20", "name"=>"Dollar Index Change", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"5", "starts_at(3i)"=>"20", "starts_at(4i)"=>"04", "starts_at(5i)"=>"18", "capacity"=>"0", "description"=>"Dollar index goes higher. "}}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;35;1mEvent Update (0.2ms)[0m   [0mUPDATE "events" SET "updated_at" = '2010-03-31 14:03:22', "starts_at" = '2010-05-20 04:18:00' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/events/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/events/1]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 09:03:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 43ms (View: 39, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 09:03:23) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-03-31 09:04:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/events/1/edit]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 09:06:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#copy (for 127.0.0.1 at 2010-03-31 09:06:11) [POST]
+  Parameters: {"authenticity_token"=>"n7xfv3Ofm8hhWX9sjvOgUvO+xGnqjE1oby8LvKnlWoE=", "id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `copy' for #<Class:0x10417ff48>):
+  app/controllers/events_controller.rb:117:in `copy'
+
+Rendered rescues/_trace (20.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-03-31 09:13:05) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 118ms (View: 7, DB: 1) | 200 OK [http://localhost/events/]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 09:13:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-03-31 09:14:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x1042ebc10>) on line #31 of app/views/events/show.html.erb:
+28: 
+29: 
+30: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+31: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+32: 
+33: <%= button_to "Copy" , copy_event_path(@event) %>
+34: 
+
+    app/views/events/show.html.erb:31
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (66.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-31 09:22:46) [GET]
+
+ActionController::RoutingError (No route matches "/events/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+Migrating to CreateTags (20100325064740)
+Migrating to CreateEvents (20100331041627)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100325030347)
+Migrating to CreateComments (20100325062109)
+Migrating to CreateTags (20100325064740)
+Migrating to CreateEvents (20100331041627)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("events")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tags")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-06 10:43:48) [GET]
+Rendering home/index
+Completed in 69ms (View: 68, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 10:43:50) [GET]
+  [4;36;1mPost Load (30.1ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 149ms (View: 81, DB: 30) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 10:43:55) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 50ms (View: 46, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-06 10:54:57) [GET]
+Rendering home/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 10:55:49) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-06 10:56:48) [GET]
+Rendering home/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/home/index.html.erb:
+1: <h1>Hello, Rails!</h1>
+2: 
+3: <% @posts.each do |post| %>
+4: <td><%=h post.name %></td>
+5: <td><%=h post.title %></td>
+6: <td><%=h post.content %></td>
+
+    app/views/home/index.html.erb:3
+
+Rendered rescues/_trace (26.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:00:16) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:00:41) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:01:12) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.4ms)
+Completed in 56ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:03:47) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:05:25) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-04-06 11:05:47) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (33.1ms)
+Completed in 65ms (View: 61, DB: 0) | 200 OK [http://0.0.0.0/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-04-06 11:07:06) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"Unix"}}, "name"=>"BrettU", "title"=>"This is my new Brett U Blog", "content"=>"Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:01:12) [GET]\r\n  Post Load (0.6ms)   SELECT * FROM \"posts\" \r\nRendering template within layouts/posts\r\nRendering posts/index\r\nRendered posts/_header (0.4ms)\r\nCompleted in 56ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/]\r\n\r\n\r\nProcessing PostsController#index (for 127.0.0.1 at 2010-04-06 11:03:47) [GET]\r\n  Post Load (0.5ms)   SELECT * FROM \"posts\" \r\nRendering template within layouts/posts\r\nRendering posts/index\r\nRendered posts/_header (0.1ms)\r\nCompleted in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]\r\n\r\n\r\nProcessing PostsController#index (for 127.0.0.1 at 2010-04-06 11:05:25) [GET]\r\n  Post Load (0.5ms)   SELECT * FROM \"posts\" \r\nRendering template within layouts/posts\r\nRendering posts/index\r\nRendered posts/_header (0.1ms)\r\nCompleted in 11ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]\r\n\r\n\r\nProcessing PostsController#new (for 127.0.0.1 at 2010-04-06 11:05:47) [GET]\r\nRendering template within layouts/posts\r\nRendering posts/new\r\nRendered posts/_form (33.1ms)\r\nCompleted in 65ms (View: 61, DB: 0) | 200 OK [http://0.0.0.0/posts/new]\r\n"}, "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI="}
+  [4;36;1mPost Create (10.1ms)[0m   [0;1mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('BrettU', '2010-04-06 16:07:06', 'This is my new Brett U Blog', '2010-04-06 16:07:06', 'Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:01:12) [GET]
+ Post Load (0.6ms) SELECT * FROM "posts" 
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.4ms)
+Completed in 56ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:03:47) [GET]
+ Post Load (0.5ms) SELECT * FROM "posts" 
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:05:25) [GET]
+ Post Load (0.5ms) SELECT * FROM "posts" 
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-04-06 11:05:47) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (33.1ms)
+Completed in 65ms (View: 61, DB: 0) | 200 OK [http://0.0.0.0/posts/new]
+')[0m
+  [4;35;1mTag Create (0.1ms)[0m   [0mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('Unix', '2010-04-06 16:07:06', '2010-04-06 16:07:06', 6)[0m
+Redirected to http://0.0.0.0:3000/posts/6
+Completed in 61ms (DB: 10) | 302 Found [http://0.0.0.0/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-04-06 11:07:06) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 6) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://0.0.0.0/posts/6]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:07:12) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:07:57) [GET]
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:08:45) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:10) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:18) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:45) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:46) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:48) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:48) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:49) [GET]
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:49) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:50) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:51) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:09:51) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:10:07) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.4ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:10:08) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 147ms (View: 138, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:10:48) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering events/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:11:25) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:14:11) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:14:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:15:34) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.4ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:16:51) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.2ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:17:02) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.4ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:17:07) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 48ms (View: 44, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-04-06 11:19:37) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Post with ID=edit):
+  app/controllers/posts_controller.rb:91:in `find_post'
+
+Rendered rescues/_trace (21.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:19:46) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:27:35) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:27:53) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:28:00) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:28:46) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.4ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-04-06 11:28:55) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (5.7ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:29:49) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:30:02) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 43ms (View: 39, DB: 1) | 200 OK [http://0.0.0.0/posts/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:30:15) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:30:53) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.1ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:31:54) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.4ms)
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:33:45) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:37:07) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.6ms)
+Completed in 45ms (View: 41, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:37:30) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:37:50) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:39:02) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:39:02) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:39:18) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.6ms)
+Completed in 45ms (View: 41, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:40:17) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (1.0ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:40:32) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.9ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:41:22) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.2ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:41:42) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:41:53) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.3ms)
+Completed in 47ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:41:55) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:41:57) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.2ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:44:24) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:44:26) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:46:16) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:46:18) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:46:42) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:46:49) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 11:47:16) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.3ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:47:21) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.3ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:47:45) [GET]
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 48ms (View: 44, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:48:30) [GET]
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.5ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:49:13) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (1.0ms)
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-04-06 11:49:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x1050e48f8>) on line #31 of app/views/events/show.html.erb:
+28: 
+29: 
+30: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+31: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+32: 
+33: 
+34: </div>
+
+    app/views/events/show.html.erb:31
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (65.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-04-06 11:58:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x105243258>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: 
+28: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+29: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (27.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2010-04-06 11:58:10) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://0.0.0.0/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2010-04-06 11:59:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI=", "event"=>{"price"=>"Free!!!", "name"=>"Ruby MN Usergroup", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"4", "starts_at(3i)"=>"6", "starts_at(4i)"=>"16", "starts_at(5i)"=>"58", "capacity"=>"Not Sure", "description"=>"The last Monday of every month at Refactr"}}
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO "events" ("name", "price", "created_at", "starts_at", "updated_at", "description", "capacity") VALUES('Ruby MN Usergroup', 0.0, '2010-04-06 16:59:11', '2010-04-06 16:58:00', '2010-04-06 16:59:11', 'The last Monday of every month at Refactr', 0)[0m
+Redirected to http://0.0.0.0:3000/events/5
+Completed in 8ms (DB: 0) | 302 Found [http://0.0.0.0/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-04-06 11:59:11) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 5) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x1051c54c0>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: 
+28: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+29: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 11:59:16) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#edit (for 127.0.0.1 at 2010-04-06 12:04:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/edit
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/events/1/edit]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-04-06 12:04:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x10512e3e0>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: 
+28: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+29: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (64.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#update (for 127.0.0.1 at 2010-04-06 12:04:13) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI=", "id"=>"1", "event"=>{"price"=>"20", "name"=>"Dollar Index Change", "starts_at(1i)"=>"2010", "starts_at(2i)"=>"5", "starts_at(3i)"=>"20", "starts_at(4i)"=>"04", "starts_at(5i)"=>"18", "capacity"=>"0", "description"=>"Dollar index goes higher. "}}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Redirected to http://0.0.0.0:3000/events/1
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/events/1]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2010-04-06 12:04:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+
+ActionView::TemplateError (undefined method `event_comments_path' for #<ActionView::Base:0x1052644f8>) on line #29 of app/views/events/show.html.erb:
+26: 
+27: 
+28: <%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+29: <%= link_to 'Manage Comments', event_comments_path(@event) %>
+
+    app/views/events/show.html.erb:29
+    app/controllers/events_controller.rb:35:in `show'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2010-04-06 12:04:31) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 51ms (View: 48, DB: 0) | 200 OK [http://0.0.0.0/events/new]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:21:39) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:21:42) [GET]
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:22:12) [GET]
+  [4;36;1mEvent Load (0.6ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:22:37) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:22:50) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.5ms)
+Completed in 50ms (View: 46, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:22:52) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:23:02) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.5ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:23:12) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.5ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:23:22) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:23:41) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.5ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:23:53) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.5ms)
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:39:17) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:41:32) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:41:35) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:41:42) [GET]
+  [4;36;1mEvent Load (0.5ms)[0m   [0;1mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 20ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-04-06 12:41:48) [GET]
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" ORDER BY name[0m
+Rendering template within layouts/events
+Rendering events/index
+Rendered events/_header (0.6ms)
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/events]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:41:51) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-04-06 12:47:20) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (40.9ms)
+Completed in 46ms (View: 42, DB: 0) | 200 OK [http://0.0.0.0/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-04-06 12:49:36) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"HAML"}}, "name"=>"BrettU", "title"=>"HAML", "content"=>"I was having this issue the other day trying to get a unique javaScript class attribute to stick in HAML. HAML versus writing HTML is nice and easy in my opinion and it seems like it is saving a ton of time messing around with closing tags. This was my experience —\r\n\r\nIn HAML you can simply append different id and class definitions together like this – \r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%div.car_chase#dredlock\r\n\r\n</pre>\r\n\r\nbut I needed a class to stick which looked like this:\r\n \r\n<pre lang=\"javascript\" line=\"1\">\r\n\r\nclass=\"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"\r\n\r\n</pre>\r\n\r\nI was getting errors by simply concatenating the elements,  but then I recalled additional attributes it might look something like this: \r\n\r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%input#dredlock{ :alt => \"dirty hair\", :name => \"textarea\", :type => \"text\"}\r\n\r\n</pre>\r\n\r\nBy adding the class to the id attribute list I got it to stick.\r\n\r\n<pre lang=\"ruby\" line=\"1\">\r\n%div\r\n  %label{ :for => \"hairwashing\" }\r\n    Email address\r\n    %abbr{ :title => \"Required\" }\r\n      *\r\n  %input#dreadlockemail{ :alt => \"email\", :name => \"email\", :type => \"text\", :class => \"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"}\r\n</pre>\r\n"}, "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI="}
+Rendering template within layouts/posts
+Rendering posts/new
+Rendered posts/_form (19.1ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-04-06 12:49:59) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"HAML"}}, "name"=>"BrettU", "title"=>"Classes in HAML", "content"=>"I was having this issue the other day trying to get a unique javaScript class attribute to stick in HAML. HAML versus writing HTML is nice and easy in my opinion and it seems like it is saving a ton of time messing around with closing tags. This was my experience —\r\n\r\nIn HAML you can simply append different id and class definitions together like this – \r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%div.car_chase#dredlock\r\n\r\n</pre>\r\n\r\nbut I needed a class to stick which looked like this:\r\n \r\n<pre lang=\"javascript\" line=\"1\">\r\n\r\nclass=\"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"\r\n\r\n</pre>\r\n\r\nI was getting errors by simply concatenating the elements,  but then I recalled additional attributes it might look something like this: \r\n\r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%input#dredlock{ :alt => \"dirty hair\", :name => \"textarea\", :type => \"text\"}\r\n\r\n</pre>\r\n\r\nBy adding the class to the id attribute list I got it to stick.\r\n\r\n<pre lang=\"ruby\" line=\"1\">\r\n%div\r\n  %label{ :for => \"hairwashing\" }\r\n    Email address\r\n    %abbr{ :title => \"Required\" }\r\n      *\r\n  %input#dreadlockemail{ :alt => \"email\", :name => \"email\", :type => \"text\", :class => \"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"}\r\n</pre>\r\n"}, "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI="}
+  [4;35;1mPost Create (24.6ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('BrettU', '2010-04-06 17:49:59', 'Classes in HAML', '2010-04-06 17:49:59', 'I was having this issue the other day trying to get a unique javaScript class attribute to stick in HAML. HAML versus writing HTML is nice and easy in my opinion and it seems like it is saving a ton of time messing around with closing tags. This was my experience —
+
+In HAML you can simply append different id and class definitions together like this – 
+<pre lang="ruby" line="1">
+
+%div.car_chase#dredlock
+
+</pre>
+
+but I needed a class to stick which looked like this:
+ 
+<pre lang="javascript" line="1">
+
+class="{required:true, email:true, messages:{email:''Please enter a valid email address''}}"
+
+</pre>
+
+I was getting errors by simply concatenating the elements, but then I recalled additional attributes it might look something like this: 
+
+<pre lang="ruby" line="1">
+
+%input#dredlock{ :alt => "dirty hair", :name => "textarea", :type => "text"}
+
+</pre>
+
+By adding the class to the id attribute list I got it to stick.
+
+<pre lang="ruby" line="1">
+%div
+ %label{ :for => "hairwashing" }
+ Email address
+ %abbr{ :title => "Required" }
+ *
+ %input#dreadlockemail{ :alt => "email", :name => "email", :type => "text", :class => "{required:true, email:true, messages:{email:''Please enter a valid email address''}}"}
+</pre>
+')[0m
+  [4;36;1mTag Create (0.1ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('HAML', '2010-04-06 17:49:59', '2010-04-06 17:49:59', 7)[0m
+Redirected to http://0.0.0.0:3000/posts/7
+Completed in 74ms (DB: 25) | 302 Found [http://0.0.0.0/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-04-06 12:49:59) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 7) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/posts/7]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-06 12:50:16) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Rendered posts/_header (0.2ms)
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-04-06 12:52:16) [POST]
+  Parameters: {"commit"=>"Save", "post"=>{"tags_attributes"=>{"0"=>{"name"=>"HAML"}}, "name"=>"BrettU", "title"=>"Classes in HAML", "content"=>"<p>I was having this issue the other day trying to get a unique javaScript class attribute to stick in HAML. HAML versus writing HTML is nice and easy in my opinion and it seems like it is saving a ton of time messing around with closing tags. This was my experience — \r\n</p>\r\n<p>\r\n\r\nIn HAML you can simply append different id and class definitions together like this – \r\n</p>\r\n<p>\r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%div.car_chase#dredlock\r\n\r\n</pre>\r\n</p>\r\n\r\n<p>\r\nbut I needed a class to stick which looked like this:\r\n </p>\r\n<p>\r\n<pre lang=\"javascript\" line=\"1\">\r\n\r\nclass=\"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"\r\n</pre>\r\n</p>\r\n\r\n<p>\r\nI was getting errors by simply concatenating the elements,  but then I recalled additional attributes it might look something like this: \r\n</p>\r\n\r\n<p>\r\n<pre lang=\"ruby\" line=\"1\">\r\n\r\n%input#dredlock{ :alt => \"dirty hair\", :name => \"textarea\", :type => \"text\"}\r\n\r\n</pre>\r\n</p>\r\n\r\n<p>\r\nBy adding the class to the id attribute list I got it to stick.\r\n</p>\r\n\r\n<p>\r\n<pre lang=\"ruby\" line=\"1\">\r\n%div\r\n  %label{ :for => \"hairwashing\" }\r\n    Email address\r\n    %abbr{ :title => \"Required\" }\r\n      *\r\n  %input#dreadlockemail{ :alt => \"email\", :name => \"email\", :type => \"text\", :class => \"{required:true, email:true, messages:{email:'Please enter a valid email address'}}\"}\r\n</pre>\r\n</p>\r\n\r\n"}, "authenticity_token"=>"J3KZizgrNEJhEkz7rT+ZJHEwYS+v/pxQWUgZHyjR1zI="}
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("name", "created_at", "title", "updated_at", "content") VALUES('BrettU', '2010-04-06 17:52:16', 'Classes in HAML', '2010-04-06 17:52:16', '<p>I was having this issue the other day trying to get a unique javaScript class attribute to stick in HAML. HAML versus writing HTML is nice and easy in my opinion and it seems like it is saving a ton of time messing around with closing tags. This was my experience — 
+</p>
+<p>
+
+In HAML you can simply append different id and class definitions together like this – 
+</p>
+<p>
+<pre lang="ruby" line="1">
+
+%div.car_chase#dredlock
+
+</pre>
+</p>
+
+<p>
+but I needed a class to stick which looked like this:
+ </p>
+<p>
+<pre lang="javascript" line="1">
+
+class="{required:true, email:true, messages:{email:''Please enter a valid email address''}}"
+</pre>
+</p>
+
+<p>
+I was getting errors by simply concatenating the elements, but then I recalled additional attributes it might look something like this: 
+</p>
+
+<p>
+<pre lang="ruby" line="1">
+
+%input#dredlock{ :alt => "dirty hair", :name => "textarea", :type => "text"}
+
+</pre>
+</p>
+
+<p>
+By adding the class to the id attribute list I got it to stick.
+</p>
+
+<p>
+<pre lang="ruby" line="1">
+%div
+ %label{ :for => "hairwashing" }
+ Email address
+ %abbr{ :title => "Required" }
+ *
+ %input#dreadlockemail{ :alt => "email", :name => "email", :type => "text", :class => "{required:true, email:true, messages:{email:''Please enter a valid email address''}}"}
+</pre>
+</p>
+
+')[0m
+  [4;36;1mTag Create (0.1ms)[0m   [0;1mINSERT INTO "tags" ("name", "created_at", "updated_at", "post_id") VALUES('HAML', '2010-04-06 17:52:16', '2010-04-06 17:52:16', 8)[0m
+Redirected to http://0.0.0.0:3000/posts/8
+Completed in 27ms (DB: 0) | 302 Found [http://0.0.0.0/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-04-06 12:52:16) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 8) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/posts/8]

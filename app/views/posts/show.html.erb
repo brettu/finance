@@ -1,0 +1,19 @@
+<p>
+  <b>Name:</b>
+  <%=h @post.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @post.content %>
+</p>
+
+
+<%= link_to 'Edit this post <br />', edit_post_path(@post) %> |
+<%= link_to 'Back to the main post <br />', posts_path %>
+<%= link_to 'Manage Comments', post_comments_path(@post) %>
